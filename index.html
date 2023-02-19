@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Mentor | Results summary component</title>
+  <link rel="shortcut icon" href="assets/images/favicon-32x32.png" type="image/x-icon">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <main>
+    <div class="result">
+      <h3>Your Result</h3>
+      <div class="score">
+        <p class="scorenum" id="num">76</p>
+        <p>of 100</p>
+      </div>
+      <div class="text">
+        <h1>Great</h1>
+        <p>You scored higher than 65% of the people who taken these tests.</p>
+      </div>
+    </div>
+    <div class="summary">
+      <h3>Summary</h3>
+      <div class="wrapper">
+        <div class="container reaction">
+          <div class="category">
+            <img src="assets/images/icon-reaction.svg" alt="icon-reaction">
+            <p>Reaction</p>
+          </div>
+          <div class="evaluation">
+            <p>80 <span>/ 100</span></p>
+          </div>
+        </div>
+        <div class="container memory">
+          <div class="category">
+            <img src="assets/images/icon-memory.svg" alt="icon-memory">
+            <p>Memory</p>
+          </div>
+          <div class="evaluation">
+            <p>92 <span>/ 100</span></p>
+          </div>
+        </div>
+        <div class="container verbal">
+          <div class="category">
+            <img src="assets/images/icon-verbal.svg" alt="icon-verbal">
+            <p>Verbal</p>
+          </div>
+          <div class="evaluation">
+            <p>61 <span>/ 100</span></p>
+          </div>
+        </div>
+        <div class="container visual">
+          <div class="category">
+            <img src="assets/images/icon-visual.svg" alt="icon-visual">
+            <p>Visual</p>
+          </div>
+          <div class="evaluation">
+            <p>72 <span>/ 100</span></p>
+          </div>
+        </div>
+      </div>
+      <a href="#" onclick="countUp()">Continue</a>
+    </div>
+  </main>
+  <script>
+    function countUp() {
+      let counts = setInterval(updated, 20);
+        let start = 0;
+        function updated() {
+            var count = document.getElementById("num");
+            
+            count.innerHTML= ++start * 2;
+            if(start === 38) {
+                clearInterval(counts);
+            }
+        }
+    }
+
+    window.onload = countUp();
+  </script>
+</body>
+</html>
